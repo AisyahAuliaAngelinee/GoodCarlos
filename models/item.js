@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Item.hasMany(models.ItemCategory, {foreignKey: 'ItemId'})
+      Item.belongsTo(models.User, {foreignKey: 'UserId'})
     }
   }
   Item.init({
@@ -18,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
     imageURL: DataTypes.STRING,
     review: DataTypes.STRING,
     price: DataTypes.INTEGER,
-    vote: DataTypes.INTEGER
+    vote: DataTypes.INTEGER,
+    UserId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Item',
