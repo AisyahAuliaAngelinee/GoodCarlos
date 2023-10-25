@@ -19,7 +19,7 @@ module.exports = {
       el.createdAt = el.updatedAt = new Date()
     })
 
-    await queryInterface.bulkInsert('Items')
+    await queryInterface.bulkInsert('Items', )
   },
 
   async down (queryInterface, Sequelize) {
