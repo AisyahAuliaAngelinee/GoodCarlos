@@ -4,8 +4,6 @@ const MainPage = require('../controllers/mainPageController')
 const Review = require('../controllers/reviewsPageController')
 const router = require('express').Router()
 
-
-
 //GET REGISTER
 router.get('/register', UserController.registerForm)
 
@@ -22,11 +20,10 @@ router.post('/login', formLogin.postLogin)
 router.get('/', MainPage.showHomePage)
 
 //? UpVote
-router.get('/:id/upVote')
-router.get('/:id/downVote')
+router.get('/:id/upVote', MainPage.upVote)
 
 //? Add More Reviews
 router.get('/add/reviews', Review.createReview)
-router.post('/add/reviews')
+router.post('/add/reviews', Review.submitReview)
 
 module.exports = router

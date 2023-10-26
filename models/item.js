@@ -17,13 +17,26 @@ module.exports = (sequelize, DataTypes) => {
       })
       Item.belongsTo(models.User, {foreignKey: 'UserId'})
     }
+
+    static upVote(params) {
+      // console.log(params, "<<<<<<<<<<<");
+      return Item.increment('vote', {
+        by: 1,
+        where: {
+          id: params
+        }
+      })
+    }
   }
   Item.init({
     name: DataTypes.STRING,
     imageURL: DataTypes.STRING,
     review: DataTypes.STRING,
     price: DataTypes.INTEGER,
-    vote: DataTypes.INTEGER,
+    vote: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    },
     UserId: DataTypes.INTEGER
   }, {
     sequelize,
