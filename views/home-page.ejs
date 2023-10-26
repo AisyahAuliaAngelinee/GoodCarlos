@@ -28,7 +28,7 @@
                 <a href="#">About Us</a>
             </nav>
             <div class="icons">
-                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="/search"><i class="fas fa-search"></i></a>
                 <div id="user-btn" class="fas fa-user"></div>
                 <div id="menu-btn" class="fas fa-bars"></div>
             </div>
@@ -60,20 +60,22 @@
     <section class="product">
         <h1 class="title">Recent Food Reviews</h1>
         <div class="box-container">
-            <% data.Items.forEach(el => { %>
+            <% data.forEach(el => { %>
                 <div id="<%= "product"+el.id %>" class="box">
                     <a href="/<%= el.id %>/upVote"><button class="fas fa-thumbs-up" name="vote"></button></a>
                     <img src="<%= el.imageURL %>" alt="">
-                    <a href="" class="ctgr"><%= data.name %></a>
+                    <a href="" class="ctgr"><%= el.Categories.name %></a>
                     <div class="name"><%= el.name %></div>
                     <div class="desc">
                         <p><%= el.review %></p>
                     </div>
                     <div class="flex">
                         <div class="price"><%= formattedCurr(el.price) %></div>
+                        <a href="/delete"><button style="background-color: red; color: white;">Delete</button></a>
+                        <a href="/<%= el.id %>/edit"><button style="background-color: greenyellow;">Edit</button></a>
                         <div class="vote">
                             <p>UpVotes : <%= el.vote %></p>
-                        </div>
+                        </div>  
                     </div>
                 </div>
             <% }) %>
@@ -83,5 +85,6 @@
         </div>
     </section>  
     <!-- PRODUK END -->
+
 </body>
 </html>
