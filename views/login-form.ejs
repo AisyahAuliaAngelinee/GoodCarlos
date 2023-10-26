@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodCarlos Register Page</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            zoom: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div>
+            <!-- Formulir -->
+            <form action="/register" method="POST">
+                <div class="mb-3">
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" autocomplete="off" required>
+                </div>
+
+                <div class="mb-3">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" autocomplete="off" required>
+                </div>
+
+                <select class="form-select" aria-label="role" name="role">
+                    <option selected>Select your role here</option>
+                    <option value="admin">admin</option>
+                    <option value="user">user</option>
+                </select>
+                <br>
+
+                <button type="submit" class="btn btn-outline-success">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
