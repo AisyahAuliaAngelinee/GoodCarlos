@@ -12,7 +12,7 @@
 }
 
 * {
-    font-family: 'Gabarito';
+    font-family: 'Gabarito', sans-serif;
     margin: 0; padding: 0;
     box-sizing: border-box;
     outline: none; border: none;
@@ -51,6 +51,20 @@ section {
     padding: .7rem;
 }
 
+.title {
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+}
+
+#menu-btn {
+    display: none;
+}
+
 /* HEADING START */
 .header {
     position: sticky;
@@ -80,4 +94,51 @@ section {
 .header .flex .navbar a:hover {
     color: var(--accent);
 }
+
+.header .flex .icons > * {
+    margin-left: .5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--white);
+}
+
+.header .flex .icons > *:hover {
+    color: var(--accent);
+}
 /* HEADING END */
+
+/* KATEGORI START */
+.category .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.category .box-container .box {
+    border: var(--border1);
+    padding: .5rem;
+    text-align: center;
+}
+
+.category .box-container .box img {
+    width: 100%;
+    height: 15rem;
+    object-fit: contain;
+}
+
+.category .box-container .box h3 {
+    font-size: 2rem;
+    margin-top: .5rem;
+    color: var(--accent);
+    text-transform: capitalize;
+}
+
+.category .box-container .box:hover {
+    background-color: var(--accent);
+}
+
+.category .box-container .box:hover h3 {
+    color: var(--white);
+}
+/* c.category END */

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 
     <!-- Website Icon -->
-    <link rel="Website icon" type="png" href="/GoodCarlos/asset/icons/goodcarlos-favicon-color.png">
+    <link rel="Website icon" type="png" href="asset/icons/goodcarlos-favicon-color.png">
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -21,14 +21,58 @@
     <header class="header">
         <section class="flex">
             <div href="/home" class="logo">
-                <img src="/GoodCarlos/asset/logo/png/logo-no-background.png" alt="">
+                <img src="asset/logo/png/logo-no-background.png" alt="">
             </div>
             <nav class="navbar">
                 <a href="/home">Home</a>
                 <a href="#">About Us</a>
             </nav>
+            <div class="icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <div id="user-btn" class="fas fa-user"></div>
+                <div id="menu-btn" class="fas fa-bars"></div>
+            </div>
         </section>
     </header>
     <!-- HEADER SECTION END -->
+
+    <!-- KATEGORI START -->
+    <section class="category">
+        <h1 class="title">CATEGORY</h1>
+        <div class="box-container">
+            <a href="#" class="box">
+                <img src="category/kategori-1.png" alt="">
+                <h3>CHICKEN</h3>
+            </a>
+            <a href="#" class="box">
+                <img src="category/kategori-2.png" alt="">
+                <h3>BURGER</h3>
+            </a>
+            <a href="#" class="box">
+                <img src="category/kategori-3.png" alt="">
+                <h3>DRINKS</h3>
+            </a>
+            <a href="#" class="box">
+                <img src="category/kategori-4.png" alt="">
+                <h3>DESSERTS</h3>
+            </a>
+        </div>
+    </section>
+    <!-- KATEGORI END -->
+
+    <!-- PRODUK START -->
+    <section class="product">
+        <h1 class="title">GoodCarlos Best Reviews</h1>
+        <div class="box-container">
+            <% dataItem.forEach((el) => {console.log(el); %>
+                <form action="" method="" class="box">
+                    <img src="<%= el.imageURL %>" alt="">
+                    <a href="" class="ctgr">CHICKEN</a>
+                    <div class="name"></div>
+                </form>
+            <% }) %>
+        </div>
+    </section>
+    <!-- PRODUK END -->
 </body>
 </html>
