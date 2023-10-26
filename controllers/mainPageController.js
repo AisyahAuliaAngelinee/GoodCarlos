@@ -19,14 +19,16 @@ class MainPage {
         }
     }
 
-    // static async upVote(req, res) {
-    //     try {
-            
-    //     } catch (error) {
-    //         console.log(error);
-    //         res.send(error)
-    //     }
-    // }
+    static async upVote(req, res) {
+        try {
+            // console.log(req.params, "<<<<<<<<<<<<");
+            await Item.upVote(+req.params.id)
+            res.redirect('/#product' + req.params.id)
+        } catch (error) {
+            console.log(error);
+            res.send(error)
+        }
+    }
 }
 
 module.exports = MainPage

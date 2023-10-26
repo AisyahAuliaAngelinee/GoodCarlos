@@ -42,7 +42,7 @@
 html {
     font-size: 100%;
     overflow-x: hidden;
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     stop-opacity: 7rem;
     background-color: var(--background-color);
 }
@@ -187,8 +187,7 @@ section {
     margin-bottom: .5rem;
 }
 
-.product .box-container .box .fa-thumbs-up,
-.product .box-container .box .fa-thumbs-down {
+.product .box-container .box .fa-thumbs-up {
     position: absolute;
     top: 3.2rem;
     height: 3.5rem;
@@ -207,25 +206,12 @@ section {
     animation: 1s linear infinite;
 }
 
-.product .box-container .box .fa-thumbs-down:hover {
-    color: var(--red);
-    animation: 1s linear infinite;
-}
-
 .product .box-container .box .fa-thumbs-up {
     left: -10rem;
 }
 
-.product .box-container .box .fa-thumbs-down {
-    right: -10rem;
-}
-
 .product .box-container .box .fa-thumbs-up {
     left: 1.5rem;
-}
-
-.product .box-container .box .fa-thumbs-down {
-    right: 1.5rem;
 }
 
 .product .box-container .box .ctgr {

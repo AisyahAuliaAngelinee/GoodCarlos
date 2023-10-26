@@ -22,8 +22,7 @@ router.post('/login', formLogin.postLogin)
 router.get('/', MainPage.showHomePage)
 
 //? UpVote
-router.get('/:id/upVote')
-router.get('/:id/downVote')
+router.get('/:id/upVote', MainPage.upVote)
 
 //? Add More Reviews
 router.get('/add/reviews', Review.createReview)

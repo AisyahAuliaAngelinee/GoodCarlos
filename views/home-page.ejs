@@ -61,9 +61,8 @@
         <h1 class="title">Recent Food Reviews</h1>
         <div class="box-container">
             <% dataItem.forEach((el) => { %>
-                <form action="" method="get" class="box">
-                    <a href="/<%= dataItem.id %>/upVote"><button type="submit" class="fas fa-thumbs-up" name="vote"></button></a>
-                    <a href="/<%= dataItem.id %>/downVote"><button type="submit" class="fas fa-thumbs-down" name="vote"></button></a>
+                <div id="<%= "product"+el.id %>" class="box">
+                    <a href="/<%= el.id %>/upVote"><button class="fas fa-thumbs-up" name="vote"></button></a>
                     <img src="<%= el.imageURL %>" alt="">
                     <% el.Categories.forEach((cat) => { %>
                         <a href="" class="ctgr"><%= cat.name %></a>
@@ -78,13 +77,16 @@
                             <p>UpVotes : <%= el.vote %></p>
                         </div>
                     </div>
-                </form>
+                </div>
             <% }) %>
         </div>
         <div class="more-btn">
             <a href="/add/reviews" class="btn">Create Reviews</a>
         </div>
     </section>
+    <!-- <section id="product">
+        hai
+    </section> -->
     <!-- PRODUK END -->
 </body>
 </html>
