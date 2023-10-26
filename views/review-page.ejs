@@ -6,6 +6,49 @@
     <title>Document</title>
 </head>
 <body>
+
+    
+    <!-- HEADER SECTION START -->
+    <header class="header">
+        <section class="flex">
+            <div href="/" class="logo">
+                <img src="asset/logo/png/logo-no-background.png" alt="">
+            </div>
+            <nav class="navbar">
+                <a href="/">Home</a>
+                <a href="#">About Us</a>
+            </nav>
+            <div class="icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <div id="user-btn" class="fas fa-user"></div>
+                <div id="menu-btn" class="fas fa-bars"></div>
+            </div>
+        </section>
+    </header>
+    <!-- HEADER SECTION END -->
+
+    <!-- REVIEW SECTION START -->
+    <section class="review">
+        <div class="row">
+            <form action="/add/reviews" method="post">
+                <h3>ADD YOUR REVIEW</h3>
+                <input type="text" name="name" maxlength="50" class="box" placeholder="Enter Food Name" required><br>
+                <select name="categoryId" id="">
+                    <option value="" selected="true" disabled="disabled">Choose Category</option>
+                    <% data.forEach((el) => {console.log(el); %>
+                        <option value="<%= el.id %>"><%= el.name %></option>
+                    <% }) %>
+                </select><br>
+                <input type="text" name="imageURL" maxlength="255" class="box" placeholder="Enter Image URL" required><br>
+                <textarea name="review" class="box" required placeholder="Enter your review" maxlength="500" cols="30" rows="10"></textarea><br>
+                <input type="number" name="price" min="0" max="9999999999999999" class="box" placeholder="Enter Price" required><br>
+                <input type="submit" value="Create" name="send" class="btn">
+            </form>
+        </div>
+    </section>
+    <!-- REVIEW SECTION END -->
+
+
     <form action="/add/reviews" method="post">
         <h3>ADD YOUR REVIEW</h3>
         <input type="text" name="name" maxlength="50" class="box" placeholder="Enter Food Name" required>
@@ -25,5 +68,6 @@
         <br>
         <input type="submit" value="Create" name="send" class="btn">
     </form>
+
 </body>
 </html>

@@ -2,6 +2,24 @@ const { Item, Category } = require('../models')
 const formattedCurr = require('../helpers/formattedCurrency')
 
 class MainPage {
+
+    static async showHomePage(req, res) {
+        try {  
+            // const test = await Category.findOne({
+            //     where: {
+            //         name: 'Foods'
+            //     },
+            //     include: Item
+            // })
+
+            const data = await Item.findAll({
+                include: Category
+            })
+            res.render('home-page.ejs', { formattedCurr, data})
+        } catch (error) {
+            console.log(error);
+            res.send(error)
+
         static async showHomePage(req, res) {
             try {  
                 // const test = await Category.findOne({
@@ -18,11 +36,17 @@ class MainPage {
                 console.log(error);
                 res.send(error)
             }
+
         }
     
     static async upVote(req, res) {
         try {
-            await Item.upVote(+req.params.id)
+            Item.increment('vote', {
+                by: 1,
+                where: {
+                    id: req.params.id
+                }
+            })
             res.redirect('/#product' + req.params.id)
         } catch (error) {
             console.log(error);

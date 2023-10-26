@@ -244,6 +244,12 @@ section {
     color: var(--white);
 }
 
+.product .box-container .box .desc p {
+    margin-right: auto;
+    font-size: 1rem;
+    color: var(--white);
+}
+
 .product .box-container .box .flex .vote {
     font-size: 1rem;
     color: var(--white);
@@ -254,12 +260,3 @@ section {
     text-align: center;
 }
 /* PRODUCT END */
-
-/* REVIEW START */
-.review .row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-/* REVIEW END */

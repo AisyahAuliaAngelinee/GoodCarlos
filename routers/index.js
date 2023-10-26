@@ -2,9 +2,12 @@ const UserController = require('../controllers/UserController')
 
 const formLogin = require('../controllers/loginController')
 
+
+const formLogin = require('../controllers/loginController')
+
+
 const MainPage = require('../controllers/mainPageController')
 const Review = require('../controllers/reviewsPageController')
-
 const router = require('express').Router()
 
 const isLoggedIn = function(req, res, next) {
@@ -31,6 +34,15 @@ router.get('/login', formLogin.loginForm)
 router.post('/login', formLogin.postLogin)
 
 
+//GLOBAL MIDDLEWEAR EXPRESS SESSION
+router.use(function (req, res, next) {
+    console.log(req.session);
+    console.log('Time', Date.now())
+    next()
+})
+
+
+
 // //GLOBAL MIDDLEWARE EXPRESS SESSION
 // router.use(function (req, res, next) {
 //     console.log(req.session);
@@ -39,6 +51,7 @@ router.post('/login', formLogin.postLogin)
 // })
 
 router.use(isLoggedIn)
+
 
 
 // ! READ REVIEWS
