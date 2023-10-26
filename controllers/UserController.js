@@ -4,6 +4,9 @@ const {User, Profile} = require('../models')
 class UserController{
     static async registerForm(req, res) {
         try {
+            if (req.session.UserId) {
+                res.redirect('/')
+            }
             res.render('register-form.ejs')
         } catch (err) {
             console.log(err);

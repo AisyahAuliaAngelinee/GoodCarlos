@@ -1,7 +1,7 @@
 const { Item, Category, ItemCategory } = require('../models')
 
 class Review {
-    static async createReview(req, res) {
+    static async formReview(req, res) {
         try {
             const data = await Category.findAll({
                 include: Item
@@ -33,6 +33,24 @@ class Review {
         } catch (error) {
             console.log(error);
             res.send(error)
+        }
+    }
+    static async editReview(req, res) {
+        try {
+            
+        } catch (err) {
+            console.log(err);
+            res.send(err)
+            
+        }
+    }
+    static async submitReview(req, res) {
+        try {
+            
+        } catch (err) {
+            console.log(err);
+            res.send(err)
+            
         }
     }
 }
