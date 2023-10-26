@@ -17,22 +17,29 @@
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <div>
             <!-- Formulir -->
+            <h1>Registration Form</h1>
+            <br>
             <form action="/register" method="POST">
                 <div class="mb-3">
                     <input type="email" id="email" name="email" class="form-control" placeholder="Email" autocomplete="off" required>
                 </div>
-
+                <br>
                 <div class="mb-3">
                     <input type="password" id="password" name="password" class="form-control" placeholder="Password" autocomplete="off" required>
                 </div>
-
-                <select class="form-select" aria-label="role" name="role">
-                    <option selected>Select your role here</option>
-                    <option value="admin">admin</option>
-                    <option value="user">user</option>
-                </select>
                 <br>
-
+                <div class="mb-3">
+                    <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Full Name" autocomplete="off" required>
+                </div>
+                <br>
+                <div class="mb-3">
+                    <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" placeholder="Phone Number" autocomplete="off" required>
+                </div>
+                <br>
+                <div class="mb-3">
+                    <input type="text" id="address" name="address" class="form-control" placeholder="Address" autocomplete="off" required>
+                </div>
+                <br>
                 <button type="submit" class="btn btn-outline-success">Submit</button>
             </form>
         </div>

@@ -1,4 +1,5 @@
-const { User } = require('../models')
+const { comparePassword } = require('../helpers/bcryptjs');
+const { User, Profile } = require('../models')
 
 class formLogin{
     static async loginForm(req, res) {
@@ -15,19 +16,20 @@ class formLogin{
     static async postLogin(req, res) {
         try {
             const { email, password } = req.body
-            const user = await User.findOne({where:{email}})
+            const user = await User.findOne({ where: { email } })
+            // console.log('masuk');
             if(user) {
-                const isValid = bcrypt.compareSync(password, user.password)
-                if (isValid) {
+                const isValid = comparePassword(password, user.password)
+                if (isValid) { //! case berhasil login]
                     req.session.UserId = user.UserId
-                    return res.redirect("/home")
+                    res.redirect("/home")
                 } else {
                     const error = "Invalid email/password"
-                    return res.redirect(`/login?error=${error}`)
+                    res.redirect(`/login?error=${error}`)
                 }
             } else {
                 const error = "Invalid email/password" 
-                return res.redirect(`/login?error=${error}`) //! kalau email salah
+                res.redirect(`/login?error=${error}`) //! kalau email salah
             }
         } catch (err) {
             console.log(err);

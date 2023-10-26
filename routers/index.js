@@ -1,7 +1,12 @@
 const UserController = require('../controllers/UserController')
+
+const homeController = require('../controllers/homeController')
+const formLogin = require('../controllers/loginController')
+
 const formLogin = require('../controllers/formLogin')
 const MainPage = require('../controllers/mainPageController')
 const Review = require('../controllers/reviewsPageController')
+
 const router = require('express').Router()
 
 //GET REGISTER
@@ -16,6 +21,19 @@ router.get('/login', formLogin.loginForm)
 //POST LOGIN
 router.post('/login', formLogin.postLogin)
 
+
+//GLOBAL MIDDLEWEAR EXPRESS SESSION
+router.use(function (req, res, next) {
+    console.log(req.session);
+    console.log('Time', Date.now())
+    next()
+})
+
+
+//HOME
+router.use('/home', homeController.showHome)
+
+
 // ! READ REVIEWS
 router.get('/', MainPage.showHomePage)
 
@@ -25,5 +43,6 @@ router.get('/:id/upVote', MainPage.upVote)
 //? Add More Reviews
 router.get('/add/reviews', Review.createReview)
 router.post('/add/reviews', Review.submitReview)
+
 
 module.exports = router

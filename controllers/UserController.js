@@ -1,4 +1,4 @@
-const { User } = require('../models')
+const {User, Profile} = require('../models')
 
 
 class UserController{
@@ -14,18 +14,24 @@ class UserController{
     static async postRegister(req, res) {
         //create user baru yang isinya usernmae, password, dan role.
         try {
-            console.log()
-            const {email, password, role} = req.body
-            await User.create({
+            const { email, password, fullName, phoneNumber, address, } = req.body
+            // console.log(User);
+            let UserCreate = await User.create({
                 email,
                 password,
-                role
+                role: "user"
+            })
+            // console.log(UserCreate.id);
+            let ProfileCreate = await Profile.create({
+                fullName,
+                phoneNumber,
+                address,
+                UserId: UserCreate.id
             })
             res.redirect('/login')
         } catch (err) {
             console.log(err);
             res.send(err.message)
-            
         }
     }
     
