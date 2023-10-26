@@ -5,7 +5,6 @@ class MainPage {
 
     static async showHomePage(req, res) {
         try {  
-
             const data = await Item.findAll({
                 include: Category
             })

@@ -1,11 +1,5 @@
 const UserController = require('../controllers/UserController')
-
 const formLogin = require('../controllers/loginController')
-
-
-const formLogin = require('../controllers/loginController')
-
-
 const MainPage = require('../controllers/mainPageController')
 const Review = require('../controllers/reviewsPageController')
 const router = require('express').Router()
@@ -55,7 +49,7 @@ router.use(isLoggedIn)
 
 
 // ! READ REVIEWS
-router.get('/', MainPage.showHomePage)
+router.get('/home', MainPage.showHomePage)
 
 //? UpVote
 router.get('/:id/upVote', MainPage.upVote)

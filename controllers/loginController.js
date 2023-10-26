@@ -5,7 +5,7 @@ class formLogin{
     static async loginForm(req, res) {
         try {
             if (req.session.UserId) {
-                res.redirect('/')
+                res.redirect('/home')
             }
             const { error } = req.query
             res.render("login-form", {error})
@@ -28,7 +28,7 @@ class formLogin{
                     req.session.UserId = user.id
                     // console.log(user, 'ini user');
                     // console.log(req.session, 'ini reqsession');
-                    res.redirect("/")
+                    res.redirect("/home")
                 } else {
                     const error = "Invalid email/password"
                     res.redirect(`/login?error=${error}`)

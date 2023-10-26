@@ -29,7 +29,7 @@ class Review {
                 ItemId: dataItem.id,
                 categoryId: dataItem.categoryId
             })
-            res.redirect('/')
+            res.redirect('/home')
         } catch (error) {
             console.log(error);
             res.send(error)
