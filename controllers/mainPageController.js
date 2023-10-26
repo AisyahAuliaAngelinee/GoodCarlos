@@ -5,12 +5,6 @@ class MainPage {
 
     static async showHomePage(req, res) {
         try {  
-            // const test = await Category.findOne({
-            //     where: {
-            //         name: 'Foods'
-            //     },
-            //     include: Item
-            // })
 
             const data = await Item.findAll({
                 include: Category
@@ -19,25 +13,8 @@ class MainPage {
         } catch (error) {
             console.log(error);
             res.send(error)
-
-        static async showHomePage(req, res) {
-            try {  
-                // const test = await Category.findOne({
-                //     where: {
-                //         name: 'Foods'
-                //     },
-                //     include: Item
-                // })
-                const data = await Item.findAll({
-                    include: Category
-                })
-                res.render('home-page.ejs', { formattedCurr, data})
-            } catch (error) {
-                console.log(error);
-                res.send(error)
-            }
-
         }
+    }
     
     static async upVote(req, res) {
         try {
@@ -53,6 +30,7 @@ class MainPage {
             res.send(error)
         }
     }
+    
     static async postLogout(req, res) {
         try {
             // console.log(req.session);
@@ -65,7 +43,6 @@ class MainPage {
             
         }
     }
-   
 }
 
 module.exports = MainPage
