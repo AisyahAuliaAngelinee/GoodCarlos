@@ -18,9 +18,7 @@ module.exports = {
     el.createdAt = el.updatedAt = new Date()
    })
 
-   await queryInterface.bulkInsert('ItemCategories', data, {
-    truncate: true, cascade: true, restartIdentity: true
-   })
+   await queryInterface.bulkInsert('ItemCategories', data)
   },
 
   async down (queryInterface, Sequelize) {
