@@ -1,0 +1,25 @@
+[{
+  "email": "vincentius.clarishna@gmail.com",
+  "password": "$2a$04$84bbdfK4QGmM3v0AfzZqYe0udAUg4qmc/hTp4axsWc1fkLxcxA4E6",
+  "role": "admin"
+},{
+  "email": "blipprose0@dailymotion.com",
+  "password": "$2a$04$i.ARb0mqbRYKjCxVjRChOu3JV3K3o8gfvJJlnTpDnzEdc5NAF.2jW",
+  "role": "user"
+}, {
+  "email": "nelcombe1@jimdo.com",
+  "password": "$2a$04$xVmS.XfzMKZIDvRdTC6oZeY6If9MpsPm5DoT7kK.x7iI9nrqCieVq",
+  "role": "user"
+}, {
+  "email": "wslainey2@homestead.com",
+  "password": "$2a$04$SSV5JqqwZGmk6GD4aopQAuxo4KLijbUsrjYLUJIkINajL/4RIShj6",
+  "role": "user"
+}, {
+  "email": "swilbraham3@ask.com",
+  "password": "$2a$04$Sbq4gIFThm24Mm47Sjr4wuiXYMObmyj17WA3EeVRYh2QTS/Dfjite",
+  "role": "user"
+}, {
+  "email": "rinnerstone4@harvard.edu",
+  "password": "$2a$04$ohLJbFh.g8sztaap/9Gz8eP1lVtZc15Fh2uW8oFMPr9YvW2mvi4FS",
+  "role": "user"
+}]

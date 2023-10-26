@@ -1,18 +1,14 @@
 [
     {
-        "id": 1,
         "name": "Chicken"
     },
     {
-        "id": 2,
         "name": "Burger"
     },
     {
-        "id": 3,
         "name": "Drinks"
     },
     {
-        "id": 4,
         "name": "Dessert"
     }
 ]
