@@ -26,6 +26,7 @@
             <nav class="navbar">
                 <a href="/home">Home</a>
                 <a href="#">About Us</a>
+                <a href="#">Add Review</a>
             </nav>
             <div class="icons">
                 <a href="#"><i class="fas fa-search"></i></a>
@@ -42,11 +43,7 @@
         <div class="box-container">
             <a href="#" class="box">
                 <img src="category/kategori-1.png" alt="">
-                <h3>CHICKEN</h3>
-            </a>
-            <a href="#" class="box">
-                <img src="category/kategori-2.png" alt="">
-                <h3>BURGER</h3>
+                <h3>FOODS</h3>
             </a>
             <a href="#" class="box">
                 <img src="category/kategori-3.png" alt="">
@@ -64,11 +61,20 @@
     <section class="product">
         <h1 class="title">GoodCarlos Best Reviews</h1>
         <div class="box-container">
-            <% dataItem.forEach((el) => {console.log(el); %>
+            <% dataItem.forEach((el) => { %>
                 <form action="" method="" class="box">
+                    <button type="submit" class="fas fa-vote-yea" name="vote"></button>
                     <img src="<%= el.imageURL %>" alt="">
-                    <a href="" class="ctgr">CHICKEN</a>
-                    <div class="name"></div>
+                    <% el.Categories.forEach((cat) => { %>
+                        <a href="" class="ctgr"><%= cat.name %></a>
+                    <% }) %>
+                    <div class="name"><%= el.name%></div>
+                    <div class="price"><%= formattedCurr(el.price) %></div>
+                    <div class="flex">
+                        <div class="vote">
+                            <p>UpVotes : <%= el.vote %></p>
+                        </div>
+                    </div>
                 </form>
             <% }) %>
         </div>
