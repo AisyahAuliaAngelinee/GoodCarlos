@@ -41,31 +41,32 @@
     <section class="category">
         <h1 class="title">CATEGORY</h1>
         <div class="box-container">
-            <a href="/" class="box">
-                <img src="category/kategori-1.png" alt="">
-                <h3>FOODS</h3>
+            <a href="/italian" class="box">
+                <img src="category/italian.png" alt="">
+                <h3>Italian</h3>
             </a>
-            <a href="/drinks" class="box">
-                <img src="category/kategori-3.png" alt="">
-                <h3>DRINKS</h3>
+            <a href="/healthy" class="box">
+                <img src="category/healthy.png" alt="">
+                <h3>Healthy</h3>
             </a>
-            <a href="/dessert" class="box">
-                <img src="category/kategori-4.png" alt="">
-                <h3>DESSERTS</h3>
+            <a href="/japan" class="box">
+                <img src="category/japan.png" alt="">
+                <h3>Japanese</h3>
             </a>
         </div>
     </section>
     <!-- KATEGORI END -->
 
     <!-- PRODUK START -->
+    <!-- <%= console.log(data);  %> -->
     <section class="product">
         <h1 class="title">Recent Food Reviews</h1>
         <div class="box-container">
-            <% data.Items.forEach(el => { %>
+            <% data.forEach(el => { %>
                 <div id="<%= "product"+el.id %>" class="box">
                     <a href="/<%= el.id %>/upVote"><button class="fas fa-thumbs-up" name="vote"></button></a>
                     <img src="<%= el.imageURL %>" alt="">
-                    <a href="" class="ctgr"><%= data.name %></a>
+                    <a href="" class="category"><%= data.name %></a>
                     <div class="name"><%= el.name %></div>
                     <div class="desc">
                         <p><%= el.review %></p>
