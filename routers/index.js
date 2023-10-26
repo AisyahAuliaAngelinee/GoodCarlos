@@ -14,7 +14,7 @@ router.post('/register', UserController.postRegister)
 router.get('/login', formLogin.loginForm)
 
 //POST LOGIN
-router.get('/login', formLogin.postLogin)
+router.post('/login', formLogin.postLogin)
 
 
 module.exports = router

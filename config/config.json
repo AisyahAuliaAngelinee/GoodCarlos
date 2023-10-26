@@ -2,7 +2,8 @@
   "development": {
     "username": "postgres",
     "password": "postgres",
-    "database": "localhost",
+    "database": "CarlosDB",
+    "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
