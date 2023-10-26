@@ -60,14 +60,12 @@
     <section class="product">
         <h1 class="title">Recent Food Reviews</h1>
         <div class="box-container">
-            <% dataItem.forEach((el) => { %>
+            <% data.Items.forEach(el => { %>
                 <div id="<%= "product"+el.id %>" class="box">
                     <a href="/<%= el.id %>/upVote"><button class="fas fa-thumbs-up" name="vote"></button></a>
                     <img src="<%= el.imageURL %>" alt="">
-                    <% el.Categories.forEach((cat) => { %>
-                        <a href="" class="ctgr"><%= cat.name %></a>
-                    <% }) %>
-                    <div class="name"><%= el.name%></div>
+                    <a href="" class="ctgr"><%= data.name %></a>
+                    <div class="name"><%= el.name %></div>
                     <div class="desc">
                         <p><%= el.review %></p>
                     </div>
@@ -83,10 +81,7 @@
         <div class="more-btn">
             <a href="/add/reviews" class="btn">Create Reviews</a>
         </div>
-    </section>
-    <!-- <section id="product">
-        hai
-    </section> -->
+    </section>  
     <!-- PRODUK END -->
 </body>
 </html>

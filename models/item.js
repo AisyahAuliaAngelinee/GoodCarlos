@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     static upVote(params) {
-      console.log(params, "<<<<<<<<<<<");
+      // console.log(params, "<<<<<<<<<<<");
       return Item.increment('vote', {
         by: 1,
         where: {
@@ -33,7 +33,10 @@ module.exports = (sequelize, DataTypes) => {
     imageURL: DataTypes.STRING,
     review: DataTypes.STRING,
     price: DataTypes.INTEGER,
-    vote: DataTypes.INTEGER,
+    vote: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    },
     UserId: DataTypes.INTEGER
   }, {
     sequelize,
