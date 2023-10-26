@@ -78,5 +78,85 @@
         "price": 64000,
         "vote": 123,
         "UserId": 1
-    }
+    },
+    {
+        "name": "Delicious Smoothie",
+        "imageURL": "https://www.evolvingtable.com/wp-content/uploads/2022/12/How-to-Make-Smoothie-1.jpg",
+        "review": "This smoothie is amazing! It's so refreshing and tasty.",
+        "price": 25000,
+        "vote": 5,
+        "UserId": 1
+      },
+      {
+        "name": "Iced Coffee",
+        "imageURL": "https://frostingandfettuccine.com/wp-content/uploads/2022/12/Instant-Iced-Coffee-5-1.jpg",
+        "review": "The iced coffee was good, but a bit too strong for my taste.",
+        "price": 15000,
+        "vote": 4,
+        "UserId": 2
+      },
+      {
+        "name": "Mango Lassi",
+        "imageURL": "https://www.vegrecipesofindia.com/wp-content/uploads/2021/05/mango-lassi-2.jpg",
+        "review": "The mango lassi is a perfect blend of sweetness and tanginess. Loved it!",
+        "price": 20000,
+        "vote": 5,
+        "UserId": 3
+      },
+      {
+        "name": "Green Tea",
+        "imageURL": "https://assets.epicurious.com/photos/5887d21b5f76684c78cf57db/4:3/w_2384,h_1788,c_limit/green_tea_24012017.jpg",
+        "review": "Healthy and refreshing. I drink it daily!",
+        "price": 10000,
+        "vote": 5,
+        "UserId": 4
+      },
+      {
+        "name": "Pineapple Punch",
+        "imageURL": "https://www.maebells.com/wp-content/uploads/2017/04/sparkling-pineapple-strawberry-punch-1-720x720.jpg",
+        "review": "This punch is perfect for summer parties. Everyone loved it!",
+        "price": 30000,
+        "vote": 5,
+        "UserId": 6
+      },
+      {
+        "name": "Chocolate Cake",
+        "imageURL": "https://food-images.files.bbci.co.uk/food/recipes/easy_chocolate_cake_31070_16x9.jpg",
+        "review": "This chocolate cake is divine! The rich, moist chocolatey goodness is heavenly.",
+        "price": 15000,
+        "vote": 5,
+        "UserId": 1
+      },
+      {
+        "name": "Cheesecake",
+        "imageURL": "https://sugarspunrun.com/wp-content/uploads/2019/01/Best-Cheesecake-Recipe-2-1-of-1-4-500x500.jpg",
+        "review": "The cheesecake is creamy and delightful. It's the best I've ever had!",
+        "price": 12000,
+        "vote": 4,
+        "UserId": 2
+      },
+      {
+        "name": "Strawberry Ice Cream",
+        "imageURL": "https://www.alattefood.com/wp-content/uploads/2015/05/Homemade-Strawberry-Ice-Cream-Recipe-37.jpg",
+        "review": "The strawberry ice cream is bursting with real strawberry flavor. A perfect summer treat!",
+        "price": 8000,
+        "vote": 5,
+        "UserId": 3
+      },
+      {
+        "name": "Tiramisu",
+        "imageURL": "https://static01.nyt.com/images/2017/04/05/dining/05COOKING-TIRAMISU1/05COOKING-TIRAMISU1-threeByTwoMediumAt2X-v2.jpg",
+        "review": "The tiramisu is a delightful Italian classic. Coffee-soaked layers with a creamy mascarpone filling.",
+        "price": 18000,
+        "vote": 5,
+        "UserId": 4
+      },
+      {
+        "name": "Fruit Tart",
+        "imageURL": "https://preppykitchen.com/wp-content/uploads/2016/04/Fruit-tart-2019-Recipe.jpg",
+        "review": "The fruit tart is a work of art. Fresh fruits on a buttery crust make it a delightful dessert.",
+        "price": 14000,
+        "vote": 4,
+        "UserId": 5
+      }
 ]

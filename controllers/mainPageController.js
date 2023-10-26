@@ -3,6 +3,7 @@ const formattedCurr = require('../helpers/formattedCurrency')
 
 class MainPage {
     static async showHomePage(req, res) {
+        // console.log(Item);
         try {  
             const test = await Category.findOne({
                 where: {
@@ -10,13 +11,13 @@ class MainPage {
                 },
                 include: Item
             })
-            res.render('home-page.ejs', { formattedCurr, data: test })
+            // console.log(test, 'hahaha');
+            res.render('home-page.ejs', {data: test, formattedCurr })
         } catch (error) {
             console.log(error);
             res.send(error)
         }
     }
-
     static async upVote(req, res) {
         try {
             await Item.upVote(+req.params.id)
@@ -26,6 +27,19 @@ class MainPage {
             res.send(error)
         }
     }
+    static async postLogout(req, res) {
+        try {
+            // console.log(req.session);
+            await req.session.destroy()
+            console.log(req.session);
+            res.redirect('/login')
+        } catch (err) {
+            console.log(err);
+            res.send(err)
+            
+        }
+    }
+   
 }
 
 module.exports = MainPage
