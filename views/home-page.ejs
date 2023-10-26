@@ -20,13 +20,12 @@
     <!-- HEADER SECTION START -->
     <header class="header">
         <section class="flex">
-            <div href="/home" class="logo">
+            <div href="/" class="logo">
                 <img src="asset/logo/png/logo-no-background.png" alt="">
             </div>
             <nav class="navbar">
-                <a href="/home">Home</a>
+                <a href="/">Home</a>
                 <a href="#">About Us</a>
-                <a href="#">Add Review</a>
             </nav>
             <div class="icons">
                 <a href="#"><i class="fas fa-search"></i></a>
@@ -59,24 +58,31 @@
 
     <!-- PRODUK START -->
     <section class="product">
-        <h1 class="title">GoodCarlos Best Reviews</h1>
+        <h1 class="title">Recent Food Reviews</h1>
         <div class="box-container">
             <% dataItem.forEach((el) => { %>
-                <form action="" method="" class="box">
-                    <button type="submit" class="fas fa-vote-yea" name="vote"></button>
+                <form action="" method="get" class="box">
+                    <a href="/<%= dataItem.id %>/upVote"><button type="submit" class="fas fa-thumbs-up" name="vote"></button></a>
+                    <a href="/<%= dataItem.id %>/downVote"><button type="submit" class="fas fa-thumbs-down" name="vote"></button></a>
                     <img src="<%= el.imageURL %>" alt="">
                     <% el.Categories.forEach((cat) => { %>
                         <a href="" class="ctgr"><%= cat.name %></a>
                     <% }) %>
                     <div class="name"><%= el.name%></div>
-                    <div class="price"><%= formattedCurr(el.price) %></div>
+                    <div class="desc">
+                        <p><%= el.review %></p>
+                    </div>
                     <div class="flex">
+                        <div class="price"><%= formattedCurr(el.price) %></div>
                         <div class="vote">
                             <p>UpVotes : <%= el.vote %></p>
                         </div>
                     </div>
                 </form>
             <% }) %>
+        </div>
+        <div class="more-btn">
+            <a href="/add/reviews" class="btn">Create Reviews</a>
         </div>
     </section>
     <!-- PRODUK END -->

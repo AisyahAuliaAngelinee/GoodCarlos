@@ -1,6 +1,7 @@
 const UserController = require('../controllers/UserController')
 const formLogin = require('../controllers/formLogin')
 const MainPage = require('../controllers/mainPageController')
+const Review = require('../controllers/reviewsPageController')
 const router = require('express').Router()
 
 
@@ -18,7 +19,14 @@ router.get('/login', formLogin.loginForm)
 router.post('/login', formLogin.postLogin)
 
 // ! READ REVIEWS
-router.get('/home', MainPage.showHomePage)
+router.get('/', MainPage.showHomePage)
 
+//? UpVote
+router.get('/:id/upVote')
+router.get('/:id/downVote')
+
+//? Add More Reviews
+router.get('/add/reviews', Review.createReview)
+router.post('/add/reviews')
 
 module.exports = router

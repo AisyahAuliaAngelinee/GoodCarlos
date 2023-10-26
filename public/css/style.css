@@ -5,6 +5,8 @@
     --black: #28353B;
     --background-color: #28353B;
     --accent: #ff9966;
+    --green: #A6FF96;
+    --red: #BB2525;
     --lightblack: #232D3F;
     --lightwhite: #D8D9DA;
     --border1: .2rem solid var(--accent);
@@ -63,6 +65,22 @@ section {
 
 #menu-btn {
     display: none;
+}
+
+.btn {
+    margin-top: .1rem;
+    display: inline-block;
+    font-size: 1rem;
+    padding: .5rem 1.6rem;
+    cursor: pointer;
+    transition: .2s linear;
+    background-color: var(--accent);
+    color: var(--white);
+    border-radius: 1rem;
+}
+
+.btn:hover {
+    letter-spacing: .1rem;
 }
 
 /* HEADING START */
@@ -169,7 +187,8 @@ section {
     margin-bottom: .5rem;
 }
 
-.product .box-container .box .fa-vote-yea {
+.product .box-container .box .fa-thumbs-up,
+.product .box-container .box .fa-thumbs-down {
     position: absolute;
     top: 3.2rem;
     height: 3.5rem;
@@ -183,17 +202,30 @@ section {
     transition: .2s linear;
 }
 
-.product .box-container .box .fa-vote-yea:hover {
-    color: var(--accent);
+.product .box-container .box .fa-thumbs-up:hover {
+    color: var(--green);
     animation: 1s linear infinite;
 }
 
-.product .box-container .box .fa-vote-yea {
+.product .box-container .box .fa-thumbs-down:hover {
+    color: var(--red);
+    animation: 1s linear infinite;
+}
+
+.product .box-container .box .fa-thumbs-up {
     left: -10rem;
 }
 
-.product .box-container .box:hover .fa-vote-yea {
+.product .box-container .box .fa-thumbs-down {
+    right: -10rem;
+}
+
+.product .box-container .box .fa-thumbs-up {
     left: 1.5rem;
+}
+
+.product .box-container .box .fa-thumbs-down {
+    right: 1.5rem;
 }
 
 .product .box-container .box .ctgr {
@@ -225,4 +257,10 @@ section {
     font-size: 1rem;
     color: var(--white);
 }
+
+.product .more-btn {
+    margin-top: 2rem;
+    text-align: center;
+}
+
 /* PRODUCT END */
