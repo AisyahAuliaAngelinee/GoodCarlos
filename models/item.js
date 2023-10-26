@@ -11,8 +11,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Item.hasMany(models.ItemCategory, {foreignKey: 'ItemId'})
+      Item.belongsToMany(models.Category, {
+        through: models.ItemCategory, 
+        foreignKey: 'ItemId'
+      })
       Item.belongsTo(models.User, {foreignKey: 'UserId'})
+    }
+
+    static upVote(params) {
+      // console.log(params, "<<<<<<<<<<<");
+      return Item.increment('vote', {
+        by: 1,
+        where: {
+          id: params
+        }
+      })
     }
   }
   Item.init({
@@ -20,7 +33,10 @@ module.exports = (sequelize, DataTypes) => {
     imageURL: DataTypes.STRING,
     review: DataTypes.STRING,
     price: DataTypes.INTEGER,
-    vote: DataTypes.INTEGER,
+    vote: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    },
     UserId: DataTypes.INTEGER
   }, {
     sequelize,
