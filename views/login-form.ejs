@@ -17,7 +17,8 @@
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <div>
             <!-- Formulir -->
-            <form action="/register" method="POST">
+            <form action="/login" method="post">
+                <h1>Login</h1>
                 <div class="mb-3">
                     <input type="email" id="email" name="email" class="form-control" placeholder="Email" autocomplete="off" required>
                 </div>
@@ -25,14 +26,7 @@
                 <div class="mb-3">
                     <input type="password" id="password" name="password" class="form-control" placeholder="Password" autocomplete="off" required>
                 </div>
-
-                <select class="form-select" aria-label="role" name="role">
-                    <option selected>Select your role here</option>
-                    <option value="admin">admin</option>
-                    <option value="user">user</option>
-                </select>
                 <br>
-
                 <button type="submit" class="btn btn-outline-success">Submit</button>
             </form>
         </div>
