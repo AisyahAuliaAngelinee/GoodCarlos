@@ -29,13 +29,57 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Item.init({
-    name: DataTypes.STRING,
-    imageURL: DataTypes.STRING,
-    review: DataTypes.STRING,
-    price: DataTypes.INTEGER,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Name cannot be empty'
+        },
+        notNull: {
+          msg: 'Name cannot be null'
+        }
+      }
+    },
+    imageURL: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'ImageURL cannot be empty'
+        },
+        notNull: {
+          msg: 'ImageURL cannot be null'
+        }
+      }
+    },
+    review: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Review cannot be empty'
+        },
+        notNull: {
+          msg: 'Review cannot be null'
+        }
+      }
+    },
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Price cannot be empty'
+        },
+        notNull: {
+          msg: 'Price cannot be null'
+        }
+      }
+    },
     vote: {
       type: DataTypes.INTEGER,
-      defaultValue: 0
+      defaultValue: 0,
     },
     UserId: DataTypes.INTEGER
   }, {
