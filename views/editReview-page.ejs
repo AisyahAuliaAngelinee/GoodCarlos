@@ -30,19 +30,19 @@
     <!-- REVIEW SECTION START -->
     <section class="review">
         <div class="row">
-            <form action="/add/review" method="post">
-                <h3>ADD YOUR REVIEW</h3>
-                <input type="text" name="name" maxlength="50" class="box" placeholder="Enter Food Name" required><br>
+            <form action="/edit/<%= data.id %>" method="post">
+                <h3>EDIT YOUR REVIEW</h3>
+                <input type="text" name="name" maxlength="50" class="box" placeholder="Enter Food Name" value="<%= data.name %>" required><br>
                 <select name="categoryId" id="">
                     <option value="" selected="true" disabled="disabled">Choose Category</option>
-                    <% data.forEach((el) => { %>
+                    <% data.Categories.forEach((el) => { %>
                         <option value="<%= el.id %>"><%= el.name %></option>
                     <% }) %>
                 </select><br>
-                <input type="text" name="imageURL" maxlength="255" class="box" placeholder="Enter Image URL" required><br>
-                <textarea name="review" class="box" required placeholder="Enter your review" maxlength="500" cols="30" rows="10"></textarea><br>
+                <input type="text" name="imageURL" maxlength="255" class="box" placeholder="Enter Image URL" value="<%= data.imageURL %>" required><br>
+                <textarea name="review" class="box" required placeholder="Enter your review" maxlength="500" cols="30" rows="10" value="<%= data.review %>"></textarea><br>
                 <input type="number" name="price" min="0" max="9999999999999999" class="box" placeholder="Enter Price" required><br>
-                <input type="submit" value="Create" name="send" class="btn">
+                <input type="submit" value="EDIT" name="send" class="btn">
             </form>
         </div>
     </section>

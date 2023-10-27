@@ -64,21 +64,18 @@
         <div class="box-container">
             <% data.forEach(el => { %>
                 <div id="<%= "product"+el.id %>" class="box">
-                    <a href="/<%= el.id %>/upVote"><button class="fas fa-thumbs-up" name="vote"></button></a>
+                    <a href="/home/<%= el.id %>/upVote"><button class="fas fa-thumbs-up" name="vote"></button></a>
                     <img src="<%= el.imageURL %>" alt="">
-
                     <a href="" class="ctgr"><%= el.Categories.name %></a>
-
                     <a href="" class="category"><%= data.name %></a>
-
                     <div class="name"><%= el.name %></div>
                     <div class="desc">
                         <p><%= el.review %></p>
                     </div>
                     <div class="flex">
                         <div class="price"><%= formattedCurr(el.price) %></div>
-                        <a href="/delete"><button style="background-color: red; color: white;">Delete</button></a>
-                        <a href="/<%= el.id %>/edit"><button style="background-color: greenyellow;">Edit</button></a>
+                        <a href="/home/<%= el.id %>/delete"><button style="background-color: red; color: white;">Delete</button></a>
+                        <a href="/edit/<%= el.id %>"><button style="background-color: greenyellow;">Edit</button></a>
                         <div class="vote">
                             <p>UpVotes : <%= el.vote %></p>
                         </div>  
@@ -87,7 +84,7 @@
             <% }) %>
         </div>
         <div class="more-btn">
-            <a href="/add/reviews" class="btn">Create Reviews</a>
+            <a href="/add/review" class="btn">Create Reviews</a>
         </div>
     </section>  
     <!-- PRODUK END -->

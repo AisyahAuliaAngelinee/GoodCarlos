@@ -1,7 +1,6 @@
 const UserController = require('../controllers/UserController')
 const formLogin = require('../controllers/loginController')
 const MainPage = require('../controllers/mainPageController')
-const Review = require('../controllers/reviewsPageController')
 const router = require('express').Router()
 
 const isLoggedIn = function(req, res, next) {
@@ -13,7 +12,6 @@ const isLoggedIn = function(req, res, next) {
         next()
     }
 }
-
 
 //GET REGISTER
 router.get('/register', UserController.registerForm)
@@ -27,15 +25,12 @@ router.get('/login', formLogin.loginForm)
 //POST LOGIN
 router.post('/login', formLogin.postLogin)
 
-
 //GLOBAL MIDDLEWEAR EXPRESS SESSION
 router.use(function (req, res, next) {
     console.log(req.session);
     console.log('Time', Date.now())
     next()
 })
-
-
 
 // //GLOBAL MIDDLEWARE EXPRESS SESSION
 // router.use(function (req, res, next) {
@@ -46,22 +41,23 @@ router.use(function (req, res, next) {
 
 router.use(isLoggedIn)
 
-
-
 // ! READ REVIEWS
 router.get('/home', MainPage.showHomePage)
 
-//? UpVote
-router.get('/:id/upVote', MainPage.upVote)
-
 //? Add More Reviews
-router.get('/add/reviews', Review.formReview)
-router.post('/add/reviews', Review.submitReview)
+router.get('/add/review', MainPage.formReview)
+router.post('/add/review', MainPage.submitReview)
 
 //Update(EDIT)
-router.get('/edit/reviews/:', Review.editReview)
-router.get('/edit/reviews', Review.submitReview)
+router.get('/edit/:id', MainPage.editReview)
+// router.post('/edit/review/:id', MainPage.submitEditReview)
 
+//? UpVote
+router.get('/home/:id/upVote', MainPage.upVote)
+
+
+// DELETE
+router.get('/home/:id/delete', MainPage.delItem)
 
 //ROUTER LOGOUT
 router.get('/logout', MainPage.postLogout )
