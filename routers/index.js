@@ -1,14 +1,11 @@
 const UserController = require('../controllers/UserController')
-
 const formLogin = require('../controllers/loginController')
-
 const MainPage = require('../controllers/mainPageController')
 const Review = require('../controllers/reviewsPageController')
-
 const router = require('express').Router()
 
 const isLoggedIn = function(req, res, next) {
-    console.log(req.session);
+    // console.log(req.session);
     if (!req.session.UserId) {
         const error = "Please login first!"
         res.redirect(`/login?error=${error}`)
@@ -16,6 +13,7 @@ const isLoggedIn = function(req, res, next) {
         next()
     }
 }
+
 
 
 //GET REGISTER
@@ -39,7 +37,6 @@ router.post('/login', formLogin.postLogin)
 // })
 
 router.use(isLoggedIn)
-
 
 // ! READ REVIEWS
 router.get('/', MainPage.showHomePage)

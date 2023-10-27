@@ -22,6 +22,7 @@ class formLogin{
             const { email, password } = req.body
             const user = await User.findOne({ where: { email } })
             // console.log('masuk');
+           
             if(user) {
                 const isValid = comparePassword(password, user.password)
                 if (isValid) { //! case berhasil login]
