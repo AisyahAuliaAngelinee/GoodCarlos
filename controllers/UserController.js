@@ -5,7 +5,7 @@ class UserController{
     static async registerForm(req, res) {
         try {
             if (req.session.UserId) {
-                res.redirect('/')
+                res.redirect('/home')
             }
             res.render('register-form.ejs')
         } catch (err) {
