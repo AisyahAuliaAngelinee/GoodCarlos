@@ -50,7 +50,7 @@ router.post('/add/review', MainPage.submitReview)
 
 //Update(EDIT)
 router.get('/edit/:id', MainPage.editReview)
-// router.post('/edit/review/:id', MainPage.submitEditReview)
+router.post('/edit/:id', MainPage.submitEditReview)
 
 //? UpVote
 router.get('/home/:id/upVote', MainPage.upVote)
