@@ -1,5 +1,5 @@
 const { Item, Category, ItemCategory } = require('../models')
-const formattedCurr = require('../helpers/formattedCurrency')
+const formattedCurr = require('../helpers/formattedCurrency');
 
 class MainPage {
 
@@ -87,15 +87,19 @@ class MainPage {
             })
             res.redirect('/add/review')
         } catch (error) {
-            console.log(error);
-            res.send(error)
+            if (error.name == 'SequelizeValidationError') {
+                let err = error.errors.map(el => el.message)
+                res.send(err)
+            } else {
+                console.log(error);
+                res.send(error)
+            }
         }
     }
 
     static async editReview(req, res) {
         try {
-            // res.send('Masuk Controller EDIT MAAP MASIH MUNCUL GINI 🙏🏿')
-            const data = await Item.update({
+            const data = await Item.findOne({
                 include: Category,
                 where: {
                     id: req.params.id
@@ -108,14 +112,26 @@ class MainPage {
         }
     }
 
-    // static async submitEditReview(req, res) {
-    //     try {
+    static async submitEditReview(req, res) {
+        try {
             // console.log('Masuk Controller');
-    //     } catch (error) {
-    //         console.log(error);
-    //         res.send(error)
-    //     }
-    // }
+            // res.send(req.body)
+            const { name, imageURL, review, price } = req.body
+            await Item.update({
+                name: name,
+                imageURL: imageURL,
+                review: review,
+                price: price
+            }, {
+                where: {
+                    id: req.params.id
+            }})
+            res.redirect('/home')
+        } catch (error) {
+            console.log(error);
+            res.send(error)
+        }
+    }
 }
 
 module.exports = MainPage
